@@ -21,7 +21,7 @@ const CheckoutForm = ({ totalPrice, orderData }) => {
       const { data } = await axiosSecure.post("/create-client-intent", {
         quantity: orderData?.quantity,
         plantId: orderData?.plantId,
-        price: orderData?.price / 100,
+        price: orderData?.price,
       });
       setClientSecret(data?.clientSecret);
     };
