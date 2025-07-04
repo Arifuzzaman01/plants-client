@@ -85,11 +85,11 @@ const CheckoutForm = ({ totalPrice, orderData }) => {
         }
         // update product count
         console.log(orderData?.plantId);
-        const { data: result } = await axiosSecure.patch(
+        const { data: result2 } = await axiosSecure.patch(
           `/quantity-update/${orderData?.plantId}`,
           { quantityToUpdate: orderData.quantity, status: "decrease" }
         );
-        console.log(result, "update quantity");
+        console.log(result2, "update quantity");
       } catch (error) {
         console.log(error);
       } finally {
